@@ -1,0 +1,2715 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Department - College Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0F0F0F',
+                            gray: '#1A1A1A',
+                            purple: '#8B5CF6',
+                            'purple-light': '#A855F7',
+                            green: '#00FF41',
+                            'gray-light': '#E5E7EB'
+                        }
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'matrix': 'matrix 20s linear infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            'from': { boxShadow: '0 0 5px #8B5CF6, 0 0 10px #8B5CF6, 0 0 15px #8B5CF6' },
+                            'to': { boxShadow: '0 0 10px #8B5CF6, 0 0 20px #8B5CF6, 0 0 30px #8B5CF6' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        matrix: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-cyber-dark text-cyber-gray-light font-inter overflow-x-hidden">
+    <!-- Matrix Background Effect -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-purple/5 to-transparent"></div>
+        <div class="matrix-rain absolute inset-0"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/95 backdrop-blur-md border-b border-cyber-purple/30">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">Cyber Department</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <button onclick="showSection('home')" class="nav-link active text-cyber-purple hover:text-cyber-purple-light transition-colors">Home</button>
+                    <button onclick="showSection('about')" class="nav-link hover:text-cyber-purple transition-colors">About</button>
+                    <button onclick="showSection('faculty')" class="nav-link hover:text-cyber-purple transition-colors">Faculty</button>
+                    <button onclick="showSection('events')" class="nav-link hover:text-cyber-purple transition-colors">Events</button>
+                    <button onclick="showSection('students')" class="nav-link hover:text-cyber-purple transition-colors">Students</button>
+                    <button onclick="showSection('gallery')" class="nav-link hover:text-cyber-purple transition-colors">Gallery</button>
+                    <button onclick="showSection('contact')" class="nav-link hover:text-cyber-purple transition-colors">Contact</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden bg-cyber-gray border-t border-cyber-purple/30">
+            <div class="px-4 py-4 space-y-2">
+                <button onclick="showSection('home')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Home</button>
+                <button onclick="showSection('about')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">About</button>
+                <button onclick="showSection('faculty')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Faculty</button>
+                <button onclick="showSection('events')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Events</button>
+                <button onclick="showSection('students')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Students</button>
+                <button onclick="showSection('gallery')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Gallery</button>
+                <button onclick="showSection('contact')" class="block w-full text-left py-2 hover:text-cyber-purple transition-colors">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-16">
+        <!-- HOME SECTION -->
+        <section id="home" class="section-content min-h-screen">
+            <!-- Hero Section -->
+            <div class="relative min-h-screen flex items-center justify-center">
+                <!-- Cybersecurity lab equipment and modern computer setup -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://pixabay.com/get/g6f57e4ff375c9c60e421aaa983db2be7375e0fc4fb4765a9a780eeef76d79ca59078cdff1ebe03226f4cf9180f2a57740e8f80dfa69cc857afae8144cd24ea80_1280.jpg')"></div>
+                
+                <div class="container mx-auto px-4 text-center relative z-10">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white animate-float">
+                            <span class="bg-gradient-to-r from-cyber-purple to-cyber-purple-light bg-clip-text text-transparent">
+                                Cyber Security
+                            </span>
+                            <br>Department
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-cyber-gray-light">
+                            Defending the digital frontier through education, research, and innovation
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="showSection('about')" class="cyber-btn-primary">
+                                <i class="fas fa-info-circle mr-2"></i>Explore Department
+                            </button>
+                            <button onclick="showSection('contact')" class="cyber-btn-secondary">
+                                <i class="fas fa-envelope mr-2"></i>Get in Touch
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="absolute top-20 left-10 w-20 h-20 border border-cyber-purple/30 rounded-full animate-float" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-32 right-16 w-16 h-16 border border-cyber-green/30 rounded-lg animate-float" style="animation-delay: 2s;"></div>
+            </div>
+
+            <!-- Latest News & Highlights -->
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold text-center mb-12 text-white">
+                    Latest <span class="text-cyber-purple">News & Highlights</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="cyber-card">
+                        <div class="h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-purple-light/20 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-trophy text-4xl text-cyber-purple"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">National Cyber Competition Win</h3>
+                        <p class="text-cyber-gray-light mb-4">Our students secured first place in the National Cybersecurity Challenge 2024.</p>
+                        <span class="text-cyber-purple text-sm">March 15, 2024</span>
+                    </div>
+
+                    <div class="cyber-card">
+                        <div class="h-48 bg-gradient-to-br from-cyber-green/20 to-cyber-purple/20 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-4xl text-cyber-green"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">New Research Lab Inauguration</h3>
+                        <p class="text-cyber-gray-light mb-4">State-of-the-art penetration testing lab equipped with latest tools and technologies.</p>
+                        <span class="text-cyber-purple text-sm">March 10, 2024</span>
+                    </div>
+
+                    <div class="cyber-card">
+                        <div class="h-48 bg-gradient-to-br from-cyber-purple-light/20 to-cyber-green/20 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-users text-4xl text-cyber-purple-light"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Industry Partnership Program</h3>
+                        <p class="text-cyber-gray-light mb-4">Strategic collaboration with leading cybersecurity firms for student internships.</p>
+                        <span class="text-cyber-purple text-sm">March 5, 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="bg-cyber-gray/30 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div class="cyber-stat">
+                            <div class="text-4xl font-bold text-cyber-purple mb-2">150+</div>
+                            <div class="text-cyber-gray-light">Students</div>
+                        </div>
+                        <div class="cyber-stat">
+                            <div class="text-4xl font-bold text-cyber-green mb-2">25+</div>
+                            <div class="text-cyber-gray-light">Faculty</div>
+                        </div>
+                        <div class="cyber-stat">
+                            <div class="text-4xl font-bold text-cyber-purple-light mb-2">50+</div>
+                            <div class="text-cyber-gray-light">Research Projects</div>
+                        </div>
+                        <div class="cyber-stat">
+                            <div class="text-4xl font-bold text-cyber-purple mb-2">98%</div>
+                            <div class="text-cyber-gray-light">Placement Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">About <span class="text-cyber-purple">Our Department</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Leading the future of cybersecurity education and research</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- Modern computer lab with cybersecurity focus -->
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Modern computer lab with multiple workstations" class="rounded-xl shadow-2xl w-full h-auto border border-cyber-purple/30" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyber-purple/20 to-transparent rounded-xl"></div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-white">Department Introduction</h2>
+                        <p class="text-cyber-gray-light mb-6 leading-relaxed">
+                            The Cyber Security Department at our college stands as a beacon of excellence in digital defense education. 
+                            Established in 2018, we have rapidly evolved into one of the premier cybersecurity programs in the region.
+                        </p>
+                        <p class="text-cyber-gray-light mb-6 leading-relaxed">
+                            Our comprehensive curriculum combines theoretical knowledge with hands-on practical experience, 
+                            preparing students to tackle the ever-evolving landscape of cyber threats and digital security challenges.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="cyber-badge">Ethical Hacking</span>
+                            <span class="cyber-badge">Network Security</span>
+                            <span class="cyber-badge">Digital Forensics</span>
+                            <span class="cyber-badge">Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="cyber-card">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-eye text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Our Vision</h3>
+                        </div>
+                        <p class="text-cyber-gray-light leading-relaxed">
+                            To be a globally recognized center of excellence in cybersecurity education and research, 
+                            producing ethical cyber professionals who will lead the digital defense of tomorrow.
+                        </p>
+                    </div>
+
+                    <div class="cyber-card">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyber-green to-cyber-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bullseye text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Our Mission</h3>
+                        </div>
+                        <p class="text-cyber-gray-light leading-relaxed">
+                            To provide cutting-edge cybersecurity education, conduct impactful research, and foster 
+                            innovation while maintaining the highest standards of ethical practice and social responsibility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation to Other Sections -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Explore More</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="showSection('faculty')" class="cyber-btn-outline">
+                            <i class="fas fa-users mr-2"></i>Meet Our Faculty
+                        </button>
+                        <button onclick="showSection('infrastructure')" class="cyber-btn-outline">
+                            <i class="fas fa-building mr-2"></i>Our Infrastructure
+                        </button>
+                        <button onclick="showSection('curriculum')" class="cyber-btn-outline">
+                            <i class="fas fa-book mr-2"></i>Curriculum
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACULTY SECTION -->
+        <section id="faculty" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Our <span class="text-cyber-purple">Faculty</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Expert educators and researchers shaping the future of cybersecurity</p>
+                </div>
+
+                <!-- Faculty Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Faculty Member 1 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional cybersecurity expert headshot -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Dr. John Smith - Department Head" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Dr. John Smith</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Head of Department</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Ph.D. in Cybersecurity, 15+ years experience in network security and ethical hacking</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:john.smith@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567890" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 2 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional female cybersecurity professor -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://pixabay.com/get/g9f583ab06099a7157122877f6f6ce0fd017e7662a6448204a4c4a2acb13c26372ac78eb0da5cad9d0108bd17058136e73a6046c87b8d87817456c7188c25fb12_1280.jpg" alt="Dr. Sarah Johnson - Associate Professor" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Dr. Sarah Johnson</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Associate Professor</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Specialist in Digital Forensics and Incident Response, published researcher</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:sarah.johnson@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567891" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 3 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional male cybersecurity lecturer -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Prof. Michael Chen - Assistant Professor" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Prof. Michael Chen</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Assistant Professor</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Expert in Cryptography and Blockchain Security, industry consultant</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:michael.chen@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567892" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 4 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional female cybersecurity researcher -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Dr. Emma Wilson - Senior Lecturer" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Dr. Emma Wilson</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Senior Lecturer</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Penetration Testing and Vulnerability Assessment specialist</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:emma.wilson@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567893" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 5 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional male cybersecurity instructor -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Prof. David Rodriguez - Lecturer" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Prof. David Rodriguez</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Lecturer</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Network Security and Firewall Management expert, former industry professional</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:david.rodriguez@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567894" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 6 -->
+                    <div class="cyber-card text-center">
+                        <!-- Professional female cybersecurity lab instructor -->
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Ms. Lisa Anderson - Lab Instructor" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Ms. Lisa Anderson</h3>
+                        <p class="text-cyber-purple font-medium mb-3">Lab Instructor</p>
+                        <p class="text-cyber-gray-light text-sm mb-4">Hands-on security tools and practical cybersecurity training specialist</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="mailto:lisa.anderson@college.edu" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+1234567895" class="text-cyber-purple hover:text-cyber-purple-light">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Areas -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Research <span class="text-cyber-purple">Areas</span></h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-shield-alt text-3xl text-cyber-purple mb-4"></i>
+                            <h3 class="text-lg font-semibold text-white mb-2">Network Security</h3>
+                            <p class="text-cyber-gray-light text-sm">Advanced firewall and intrusion detection systems</p>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-search text-3xl text-cyber-green mb-4"></i>
+                            <h3 class="text-lg font-semibold text-white mb-2">Digital Forensics</h3>
+                            <p class="text-cyber-gray-light text-sm">Cyber crime investigation and evidence analysis</p>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-lock text-3xl text-cyber-purple-light mb-4"></i>
+                            <h3 class="text-lg font-semibold text-white mb-2">Cryptography</h3>
+                            <p class="text-cyber-gray-light text-sm">Advanced encryption and secure communication</p>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-bug text-3xl text-cyber-purple mb-4"></i>
+                            <h3 class="text-lg font-semibold text-white mb-2">Ethical Hacking</h3>
+                            <p class="text-cyber-gray-light text-sm">Penetration testing and vulnerability assessment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS SECTION -->
+        <section id="events" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Department <span class="text-cyber-purple">Events</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Stay updated with our latest events, workshops, and competitions</p>
+                </div>
+
+                <!-- Event Tabs -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-cyber-gray/30 rounded-lg p-1 flex">
+                        <button onclick="showEventTab('upcoming')" id="upcoming-tab" class="event-tab-btn active px-6 py-2 rounded-lg transition-all">
+                            Upcoming Events
+                        </button>
+                        <button onclick="showEventTab('past')" id="past-tab" class="event-tab-btn px-6 py-2 rounded-lg transition-all">
+                            Past Events
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div id="upcoming-events" class="event-tab-content">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="cyber-card">
+                            <!-- Cybersecurity workshop with students and laptops -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Cybersecurity workshop with students at computers" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Workshop</span>
+                                <span class="text-cyber-purple text-sm">April 15, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Advanced Penetration Testing Workshop</h3>
+                            <p class="text-cyber-gray-light mb-4">Hands-on workshop covering latest penetration testing tools and techniques.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card">
+                            <!-- Cybersecurity competition setup -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Cybersecurity competition with multiple computer screens" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Competition</span>
+                                <span class="text-cyber-purple text-sm">April 22, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Capture The Flag Competition</h3>
+                            <p class="text-cyber-gray-light mb-4">Inter-college CTF competition with exciting challenges and prizes.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card">
+                            <!-- Industry expert presenting at seminar -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://pixabay.com/get/gccc60aae362c1c8115ac805646d0eae44e386f1a129bf8d57ef4d5c15df5809847ef8cc0057746b757786038d16fecdaa53a2fc02046ae59f11ddcd0a2b98b7e_1280.jpg" alt="Professional presenting at cybersecurity seminar" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Seminar</span>
+                                <span class="text-cyber-purple text-sm">May 5, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Industry Expert Seminar</h3>
+                            <p class="text-cyber-gray-light mb-4">Leading cybersecurity professionals share industry insights and career guidance.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>3:00 PM - 4:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Events -->
+                <div id="past-events" class="event-tab-content hidden">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="cyber-card opacity-75">
+                            <!-- Cybersecurity certification ceremony -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Cybersecurity certification ceremony with graduates" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Certification</span>
+                                <span class="text-cyber-purple text-sm">March 10, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Ethical Hacking Certification</h3>
+                            <p class="text-cyber-gray-light mb-4">Students received industry-recognized ethical hacking certifications.</p>
+                            <div class="flex items-center text-cyber-green text-sm">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Completed Successfully</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card opacity-75">
+                            <!-- Research presentation at conference -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Research presentation at cybersecurity conference" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Conference</span>
+                                <span class="text-cyber-purple text-sm">February 28, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Research Paper Presentation</h3>
+                            <p class="text-cyber-gray-light mb-4">Faculty presented cutting-edge research at International Cybersecurity Conference.</p>
+                            <div class="flex items-center text-cyber-green text-sm">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Completed Successfully</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card opacity-75">
+                            <!-- Hackathon event with students coding -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Students coding at cybersecurity hackathon" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="cyber-badge">Hackathon</span>
+                                <span class="text-cyber-purple text-sm">February 15, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">24-Hour Security Hackathon</h3>
+                            <p class="text-cyber-gray-light mb-4">Students developed innovative security solutions in intensive 24-hour hackathon.</p>
+                            <div class="flex items-center text-cyber-green text-sm">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Completed Successfully</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Star Performers Section -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Star <span class="text-cyber-purple">Performers</span></h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="cyber-card text-center">
+                            <!-- Outstanding student achievement photo -->
+                            <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200" alt="Student achieving excellence in cybersecurity" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Alex Thompson</h3>
+                            <p class="text-cyber-purple font-medium mb-2">Winner - National CTF 2024</p>
+                            <p class="text-cyber-gray-light text-sm">Secured 1st place in National Capture The Flag competition</p>
+                        </div>
+
+                        <div class="cyber-card text-center">
+                            <!-- Student research excellence -->
+                            <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                                <img src="https://pixabay.com/get/gd25b1d21269975e4a735c6ce04420fc42fc3b1ac362af4eb8551df81a4f07d460c7823cc16e406b252a8064c50ad693d7d2164410f728e81dec2a2b863d354d8_1280.jpg" alt="Student excelling in cybersecurity research" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Maria Garcia</h3>
+                            <p class="text-cyber-purple font-medium mb-2">Best Research Paper 2024</p>
+                            <p class="text-cyber-gray-light text-sm">Published research on AI-driven threat detection</p>
+                        </div>
+
+                        <div class="cyber-card text-center">
+                            <!-- Student industry recognition -->
+                            <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-cyber-purple/50">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200" alt="Student receiving industry recognition" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">James Wilson</h3>
+                            <p class="text-cyber-purple font-medium mb-2">Industry Excellence Award</p>
+                            <p class="text-cyber-gray-light text-sm">Recognized by leading cybersecurity firm for innovative project</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure & Achievements Teaser -->
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <div class="cyber-card text-center">
+                        <i class="fas fa-building text-4xl text-cyber-purple mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-4">World-Class Infrastructure</h3>
+                        <p class="text-cyber-gray-light mb-6">State-of-the-art labs and facilities equipped with latest cybersecurity tools</p>
+                        <button onclick="showSection('infrastructure')" class="cyber-btn-outline">
+                            Explore Infrastructure
+                        </button>
+                    </div>
+                    <div class="cyber-card text-center">
+                        <i class="fas fa-trophy text-4xl text-cyber-green mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-4">Department Achievements</h3>
+                        <p class="text-cyber-gray-light mb-6">Recognized excellence in education, research, and student accomplishments</p>
+                        <button onclick="showSection('achievements')" class="cyber-btn-outline">
+                            View Achievements
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDENTS SECTION -->
+        <section id="students" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Our <span class="text-cyber-purple">Students</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Meet our talented cybersecurity students and their research interests</p>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="cyber-card mb-8">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1">
+                            <input type="text" id="studentSearch" placeholder="Search by name, registration number, or research interest..." 
+                                   class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20">
+                        </div>
+                        <div class="flex gap-3">
+                            <select id="mentorFilter" class="bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white focus:border-cyber-purple focus:outline-none">
+                                <option value="">All Mentors</option>
+                                <option value="Dr. John Smith">Dr. John Smith</option>
+                                <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                                <option value="Prof. Michael Chen">Prof. Michael Chen</option>
+                                <option value="Dr. Emma Wilson">Dr. Emma Wilson</option>
+                            </select>
+                            <button onclick="resetFilters()" class="cyber-btn-outline px-6">
+                                <i class="fas fa-undo mr-2"></i>Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Students Table -->
+                <div class="cyber-card overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-cyber-purple/30">
+                                <th class="py-4 px-4 text-cyber-purple font-bold">#</th>
+                                <th class="py-4 px-4 text-cyber-purple font-bold">Name</th>
+                                <th class="py-4 px-4 text-cyber-purple font-bold">Registration No.</th>
+                                <th class="py-4 px-4 text-cyber-purple font-bold">Mentor</th>
+                                <th class="py-4 px-4 text-cyber-purple font-bold">Research Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+                            <!-- Student records will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <div class="flex items-center space-x-2">
+                        <button onclick="previousPage()" id="prevBtn" class="cyber-btn-outline px-4 py-2">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span id="pageInfo" class="text-cyber-gray-light px-4">Page 1 of 3</span>
+                        <button onclick="nextPage()" id="nextBtn" class="cyber-btn-outline px-4 py-2">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Student Statistics -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Student <span class="text-cyber-purple">Statistics</span></h2>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="cyber-card text-center">
+                            <div class="text-3xl font-bold text-cyber-purple mb-2">28</div>
+                            <div class="text-cyber-gray-light">Total Students</div>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <div class="text-3xl font-bold text-cyber-green mb-2">4</div>
+                            <div class="text-cyber-gray-light">Faculty Mentors</div>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <div class="text-3xl font-bold text-cyber-purple-light mb-2">12</div>
+                            <div class="text-cyber-gray-light">Research Areas</div>
+                        </div>
+                        <div class="cyber-card text-center">
+                            <div class="text-3xl font-bold text-cyber-purple mb-2">95%</div>
+                            <div class="text-cyber-gray-light">Active in Research</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mt-16 text-center">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Related Sections</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="showSection('faculty')" class="cyber-btn-outline">
+                            <i class="fas fa-users mr-2"></i>Meet Faculty Mentors
+                        </button>
+                        <button onclick="showSection('curriculum')" class="cyber-btn-outline">
+                            <i class="fas fa-book mr-2"></i>View Curriculum
+                        </button>
+                        <button onclick="showSection('achievements')" class="cyber-btn-outline">
+                            <i class="fas fa-trophy mr-2"></i>Student Achievements
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Department <span class="text-cyber-purple">Gallery</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Explore our facilities, events, and student activities through photos and videos</p>
+                </div>
+
+                <!-- Gallery Categories -->
+                <div class="flex flex-wrap justify-center mb-8 gap-3">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn active" data-filter="all">
+                        All Media
+                    </button>
+                    <button onclick="filterGallery('labs')" class="gallery-filter-btn" data-filter="labs">
+                        Labs & Infrastructure
+                    </button>
+                    <button onclick="filterGallery('events')" class="gallery-filter-btn" data-filter="events">
+                        Events & Workshops
+                    </button>
+                    <button onclick="filterGallery('students')" class="gallery-filter-btn" data-filter="students">
+                        Student Activities
+                    </button>
+                    <button onclick="filterGallery('achievements')" class="gallery-filter-btn" data-filter="achievements">
+                        Achievements
+                    </button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="galleryGrid">
+                    <!-- Lab Infrastructure Photos -->
+                    <!-- Advanced cybersecurity lab with multiple workstations -->
+                    <div class="gallery-item labs" onclick="openLightbox('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://pixabay.com/get/g7b010370d28846ef73a6e3fbc7f83b493004628a133b9684a75d9e540181cf14cb2f0d112de19ba39a5a7f8d8289ce775717e8693fe8da39115f857bc0735f60_1280.jpg" alt="Advanced cybersecurity lab with multiple workstations and security equipment" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Cybersecurity Lab</p>
+                                    <p class="text-sm text-cyber-gray-light">Advanced Equipment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modern computer lab setup -->
+                    <div class="gallery-item labs" onclick="openLightbox('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Modern computer lab with rows of workstations for cybersecurity training" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Training Lab</p>
+                                    <p class="text-sm text-cyber-gray-light">Student Workstations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Network infrastructure and server room -->
+                    <div class="gallery-item labs" onclick="openLightbox('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Network infrastructure with servers and networking equipment for cybersecurity training" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Network Lab</p>
+                                    <p class="text-sm text-cyber-gray-light">Server Infrastructure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cybersecurity monitoring center -->
+                    <div class="gallery-item labs" onclick="openLightbox('https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Cybersecurity monitoring center with multiple screens displaying security data" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Security Operations Center</p>
+                                    <p class="text-sm text-cyber-gray-light">Monitoring Systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Photos -->
+                    <!-- Cybersecurity workshop in progress -->
+                    <div class="gallery-item events" onclick="openLightbox('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Cybersecurity workshop with students learning hands-on security techniques" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Penetration Testing Workshop</p>
+                                    <p class="text-sm text-cyber-gray-light">Hands-on Training</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTF competition setup -->
+                    <div class="gallery-item events" onclick="openLightbox('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Capture The Flag cybersecurity competition with students at computer terminals" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">CTF Competition</p>
+                                    <p class="text-sm text-cyber-gray-light">Student Competition</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry expert seminar -->
+                    <div class="gallery-item events" onclick="openLightbox('https://images.unsplash.com/photo-1515378791036-0648a814c963?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://pixabay.com/get/ged1a6f359583e75d9d0598b33b2c2d06d108e64e82a25d9c026da412a37e4404f83bfce10e06532ffac37e359248ccf72b724b38e4f444303cf2db96056ff8f7_1280.jpg" alt="Industry expert presenting at cybersecurity seminar to engaged audience" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Industry Seminar</p>
+                                    <p class="text-sm text-cyber-gray-light">Expert Presentation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hackathon event -->
+                    <div class="gallery-item events" onclick="openLightbox('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Students collaborating during 24-hour cybersecurity hackathon" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Security Hackathon</p>
+                                    <p class="text-sm text-cyber-gray-light">24-Hour Challenge</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Activity Photos -->
+                    <!-- Students working on cybersecurity projects -->
+                    <div class="gallery-item students" onclick="openLightbox('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Students collaborating on cybersecurity project with laptops and documents" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Student Project Work</p>
+                                    <p class="text-sm text-cyber-gray-light">Team Collaboration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cybersecurity student research -->
+                    <div class="gallery-item students" onclick="openLightbox('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Cybersecurity students conducting research with advanced computer systems" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Research Activities</p>
+                                    <p class="text-sm text-cyber-gray-light">Student Research</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Students learning ethical hacking -->
+                    <div class="gallery-item students" onclick="openLightbox('https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Students learning ethical hacking techniques in cybersecurity classroom" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Ethical Hacking Class</p>
+                                    <p class="text-sm text-cyber-gray-light">Learning Session</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Students presenting their work -->
+                    <div class="gallery-item students" onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Cybersecurity students presenting their research projects to audience" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Student Presentations</p>
+                                    <p class="text-sm text-cyber-gray-light">Project Showcase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Photos -->
+                    <!-- Award ceremony for cybersecurity excellence -->
+                    <div class="gallery-item achievements" onclick="openLightbox('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Award ceremony recognizing cybersecurity excellence and achievements" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Excellence Awards</p>
+                                    <p class="text-sm text-cyber-gray-light">Recognition Ceremony</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate presentation -->
+                    <div class="gallery-item achievements" onclick="openLightbox('https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800')">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Students receiving cybersecurity certification and professional credentials" class="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <p class="font-medium">Certification Ceremony</p>
+                                    <p class="text-sm text-cyber-gray-light">Professional Credentials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+                    <div class="relative max-w-6xl max-h-full">
+                        <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-cyber-purple text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img id="lightboxImage" src="" alt="Gallery Image" class="max-w-full max-h-full object-contain rounded-lg border border-cyber-purple/30" />
+                    </div>
+                </div>
+
+                <!-- Industrial Visits Section -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Industrial <span class="text-cyber-purple">Visits</span></h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="cyber-card">
+                            <!-- Students visiting cybersecurity company -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://pixabay.com/get/g234eed04851037f52333ef557e5429e3a01952764338bca0e31842833afabc00cbaf7b87c08f38966da278600ad6e70e932874b98eb49b58c38893ec7273cc0a_1280.jpg" alt="Students on industrial visit to modern cybersecurity company offices" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">CyberTech Solutions Visit</h3>
+                            <p class="text-cyber-gray-light mb-4">Students gained insights into real-world cybersecurity operations and threat management.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>March 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card">
+                            <!-- Visit to security operations center -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Students exploring advanced security operations center during industrial visit" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Security Operations Center</h3>
+                            <p class="text-cyber-gray-light mb-4">Hands-on experience with enterprise-level security monitoring and incident response.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>February 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card">
+                            <!-- Technology conference visit -->
+                            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Students attending cybersecurity conference and technology expo" class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">CyberSec Conference 2024</h3>
+                            <p class="text-cyber-gray-light mb-4">Exposure to latest cybersecurity trends, tools, and industry networking opportunities.</p>
+                            <div class="flex items-center text-cyber-purple text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>January 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Contact <span class="text-cyber-purple">Us</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Get in touch with our department for inquiries, admissions, or collaborations</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-8 text-white">Get In Touch</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="cyber-card">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-white mb-2">Department Address</h3>
+                                        <p class="text-cyber-gray-light">
+                                            Cyber Security Department<br>
+                                            College of Engineering & Technology<br>
+                                            123 University Avenue<br>
+                                            Tech City, TC 12345
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cyber-card">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyber-green to-cyber-purple rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-white mb-2">Email Addresses</h3>
+                                        <div class="space-y-1 text-cyber-gray-light">
+                                            <p><span class="text-cyber-purple">General:</span> info@cyber.college.edu</p>
+                                            <p><span class="text-cyber-purple">Admissions:</span> admissions@cyber.college.edu</p>
+                                            <p><span class="text-cyber-purple">Research:</span> research@cyber.college.edu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cyber-card">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple-light to-cyber-green rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-white mb-2">Phone Numbers</h3>
+                                        <div class="space-y-1 text-cyber-gray-light">
+                                            <p><span class="text-cyber-purple">Main Office:</span> +1 (555) 123-4567</p>
+                                            <p><span class="text-cyber-purple">Head of Dept:</span> +1 (555) 123-4568</p>
+                                            <p><span class="text-cyber-purple">Lab Coordinator:</span> +1 (555) 123-4569</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cyber-card">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-white mb-2">Office Hours</h3>
+                                        <div class="space-y-1 text-cyber-gray-light">
+                                            <p><span class="text-cyber-purple">Monday-Friday:</span> 9:00 AM - 5:00 PM</p>
+                                            <p><span class="text-cyber-purple">Saturday:</span> 10:00 AM - 2:00 PM</p>
+                                            <p><span class="text-cyber-purple">Sunday:</span> Closed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-8 text-white">Send Message</h2>
+                        
+                        <form class="cyber-card space-y-6" id="contactForm">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="firstName" class="block text-cyber-purple font-medium mb-2">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required 
+                                           class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all"
+                                           placeholder="Enter your first name">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-cyber-purple font-medium mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required 
+                                           class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all"
+                                           placeholder="Enter your last name">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-cyber-purple font-medium mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all"
+                                       placeholder="Enter your email address">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-cyber-purple font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all"
+                                       placeholder="Enter your phone number">
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-cyber-purple font-medium mb-2">Subject *</label>
+                                <select id="subject" name="subject" required 
+                                        class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all">
+                                    <option value="">Select a subject</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="research">Research Collaboration</option>
+                                    <option value="general">General Information</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-cyber-purple font-medium mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full bg-cyber-gray/50 border border-cyber-purple/30 rounded-lg px-4 py-3 text-white placeholder-cyber-gray-light focus:border-cyber-purple focus:outline-none focus:ring-2 focus:ring-cyber-purple/20 transition-all resize-vertical"
+                                          placeholder="Enter your message here..."></textarea>
+                            </div>
+
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="newsletter" name="newsletter" 
+                                       class="w-4 h-4 text-cyber-purple bg-cyber-gray/50 border-cyber-purple/30 rounded focus:ring-cyber-purple focus:ring-2">
+                                <label for="newsletter" class="text-cyber-gray-light text-sm">
+                                    Subscribe to department newsletter for updates and events
+                                </label>
+                            </div>
+
+                            <button type="submit" class="cyber-btn-primary w-full">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Quick Links and Additional Sections -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Additional <span class="text-cyber-purple">Resources</span></h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-book text-3xl text-cyber-purple mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Curriculum & Syllabus</h3>
+                            <p class="text-cyber-gray-light text-sm mb-4">Download course structures and syllabus documents</p>
+                            <button onclick="showSection('curriculum')" class="cyber-btn-outline text-sm">
+                                View Curriculum
+                            </button>
+                        </div>
+
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-building text-3xl text-cyber-green mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Infrastructure</h3>
+                            <p class="text-cyber-gray-light text-sm mb-4">Explore our labs, facilities, and resources</p>
+                            <button onclick="showSection('infrastructure')" class="cyber-btn-outline text-sm">
+                                View Infrastructure
+                            </button>
+                        </div>
+
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-trophy text-3xl text-cyber-purple-light mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Achievements</h3>
+                            <p class="text-cyber-gray-light text-sm mb-4">Department and student accomplishments</p>
+                            <button onclick="showSection('achievements')" class="cyber-btn-outline text-sm">
+                                View Achievements
+                            </button>
+                        </div>
+
+                        <div class="cyber-card text-center">
+                            <i class="fas fa-calendar text-3xl text-cyber-purple mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Events</h3>
+                            <p class="text-cyber-gray-light text-sm mb-4">Upcoming workshops and competitions</p>
+                            <button onclick="showSection('events')" class="cyber-btn-outline text-sm">
+                                View Events
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Sections (Infrastructure, Achievements, Curriculum) -->
+        
+        <!-- INFRASTRUCTURE SECTION -->
+        <section id="infrastructure" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Our <span class="text-cyber-purple">Infrastructure</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">State-of-the-art facilities and cutting-edge technology for cybersecurity education</p>
+                </div>
+
+                <!-- Infrastructure Grid -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- Advanced cybersecurity lab with penetration testing setup -->
+                    <div class="relative">
+                        <img src="https://pixabay.com/get/g8d4b5f97f079a5c3ee382aabe0137778901201fd2498f43b062e0a126e8f0cd6ca7cf40ef3c07bd7b7262564832e81e6edf04bb94427036e60c8aed2327f7ca5_1280.jpg" alt="Advanced cybersecurity lab with penetration testing equipment and multiple workstations" class="rounded-xl shadow-2xl w-full h-auto border border-cyber-purple/30" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyber-purple/20 to-transparent rounded-xl"></div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-white">Advanced Cybersecurity Labs</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-cyber-green mt-1"></i>
+                                <p class="text-cyber-gray-light">Penetration Testing Lab with isolated network environments</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-cyber-green mt-1"></i>
+                                <p class="text-cyber-gray-light">Digital Forensics Lab equipped with enterprise-grade tools</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-cyber-green mt-1"></i>
+                                <p class="text-cyber-gray-light">Network Security Lab with firewall and IDS/IPS systems</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-cyber-green mt-1"></i>
+                                <p class="text-cyber-gray-light">Malware Analysis Lab with sandboxed environments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facilities Overview -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="cyber-card text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-desktop text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Modern Computing Lab</h3>
+                        <p class="text-cyber-gray-light mb-4">50 high-performance workstations with latest software and security tools</p>
+                        <div class="text-cyber-purple text-sm">
+                            <i class="fas fa-users mr-1"></i>50 Workstations
+                        </div>
+                    </div>
+
+                    <div class="cyber-card text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyber-green to-cyber-purple rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-server text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Server Infrastructure</h3>
+                        <p class="text-cyber-gray-light mb-4">Dedicated servers for research, testing, and educational purposes</p>
+                        <div class="text-cyber-purple text-sm">
+                            <i class="fas fa-database mr-1"></i>Enterprise Grade
+                        </div>
+                    </div>
+
+                    <div class="cyber-card text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyber-purple-light to-cyber-green rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Security Operations Center</h3>
+                        <p class="text-cyber-gray-light mb-4">Real-time monitoring and incident response training facility</p>
+                        <div class="text-cyber-purple text-sm">
+                            <i class="fas fa-clock mr-1"></i>24/7 Monitoring
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lab Equipment Details -->
+                <div class="cyber-card mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-white text-center">Lab <span class="text-cyber-purple">Equipment</span></h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-laptop-code text-3xl text-cyber-purple mb-3"></i>
+                            <h4 class="font-semibold text-white mb-2">Kali Linux Systems</h4>
+                            <p class="text-cyber-gray-light text-sm">Pre-configured penetration testing environments</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-network-wired text-3xl text-cyber-green mb-3"></i>
+                            <h4 class="font-semibold text-white mb-2">Network Simulators</h4>
+                            <p class="text-cyber-gray-light text-sm">Cisco, Juniper, and virtual network environments</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-bug text-3xl text-cyber-purple-light mb-3"></i>
+                            <h4 class="font-semibold text-white mb-2">Vulnerability Scanners</h4>
+                            <p class="text-cyber-gray-light text-sm">Nessus, OpenVAS, and custom scanning tools</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-search text-3xl text-cyber-purple mb-3"></i>
+                            <h4 class="font-semibold text-white mb-2">Forensics Tools</h4>
+                            <p class="text-cyber-gray-light text-sm">EnCase, FTK, and open-source forensics suites</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section id="achievements" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Our <span class="text-cyber-purple">Achievements</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Recognition and accomplishments in cybersecurity education and research</p>
+                </div>
+
+                <!-- Achievement Categories -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="cyber-card text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trophy text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Awards & Recognition</h3>
+                        <p class="text-cyber-gray-light">National and international recognition for excellence in cybersecurity education</p>
+                    </div>
+
+                    <div class="cyber-card text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-cyber-green to-cyber-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Student Success</h3>
+                        <p class="text-cyber-gray-light">Outstanding student achievements in competitions, certifications, and career placements</p>
+                    </div>
+
+                    <div class="cyber-card text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-cyber-purple-light to-cyber-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-microscope text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Research Excellence</h3>
+                        <p class="text-cyber-gray-light">Cutting-edge research publications and industry collaborations</p>
+                    </div>
+                </div>
+
+                <!-- Detailed Achievements -->
+                <div class="space-y-8">
+                    <div class="cyber-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">Recent Achievements (2024)</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-medal text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-2">National Cybersecurity Excellence Award</h4>
+                                    <p class="text-cyber-gray-light text-sm">Recognized as the leading cybersecurity department in the region</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-cyber-green to-cyber-purple rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-star text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-2">Student Competition Champions</h4>
+                                    <p class="text-cyber-gray-light text-sm">First place in National CTF Competition and multiple hackathons</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple-light to-cyber-green rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-book text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-2">Research Publications</h4>
+                                    <p class="text-cyber-gray-light text-sm">25+ peer-reviewed papers in top cybersecurity journals</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-handshake text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-2">Industry Partnerships</h4>
+                                    <p class="text-cyber-gray-light text-sm">Strategic collaborations with leading cybersecurity firms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRICULUM SECTION -->
+        <section id="curriculum" class="section-content hidden min-h-screen py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Curriculum & <span class="text-cyber-purple">Syllabus</span></h1>
+                    <p class="text-xl text-cyber-gray-light max-w-3xl mx-auto">Comprehensive cybersecurity education program designed for industry readiness</p>
+                </div>
+
+                <!-- Curriculum Overview -->
+                <div class="grid md:grid-cols-4 gap-6 mb-16">
+                    <div class="cyber-card text-center">
+                        <div class="text-3xl font-bold text-cyber-purple mb-2">4</div>
+                        <div class="text-cyber-gray-light">Years Program</div>
+                    </div>
+                    <div class="cyber-card text-center">
+                        <div class="text-3xl font-bold text-cyber-green mb-2">8</div>
+                        <div class="text-cyber-gray-light">Semesters</div>
+                    </div>
+                    <div class="cyber-card text-center">
+                        <div class="text-3xl font-bold text-cyber-purple-light mb-2">160</div>
+                        <div class="text-cyber-gray-light">Credit Hours</div>
+                    </div>
+                    <div class="cyber-card text-center">
+                        <div class="text-3xl font-bold text-cyber-purple mb-2">12</div>
+                        <div class="text-cyber-gray-light">Core Subjects</div>
+                    </div>
+                </div>
+
+                <!-- Semester-wise Curriculum -->
+                <div class="cyber-card mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-white text-center">Course <span class="text-cyber-purple">Structure</span></h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Year 1 -->
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-purple mb-4">First Year</h3>
+                            <div class="space-y-3">
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 1</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Computer Fundamentals</li>
+                                        <li>• Mathematics for Computing</li>
+                                        <li>• Introduction to Cybersecurity</li>
+                                        <li>• Programming Basics</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 2</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Data Structures & Algorithms</li>
+                                        <li>• Network Fundamentals</li>
+                                        <li>• Operating Systems</li>
+                                        <li>• Discrete Mathematics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Year 2 -->
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-purple mb-4">Second Year</h3>
+                            <div class="space-y-3">
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 3</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Network Security</li>
+                                        <li>• Cryptography & Encryption</li>
+                                        <li>• Database Security</li>
+                                        <li>• Web Application Security</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 4</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Ethical Hacking</li>
+                                        <li>• Digital Forensics</li>
+                                        <li>• Malware Analysis</li>
+                                        <li>• Security Protocols</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Year 3 -->
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-purple mb-4">Third Year</h3>
+                            <div class="space-y-3">
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 5</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Penetration Testing</li>
+                                        <li>• Incident Response</li>
+                                        <li>• Risk Assessment</li>
+                                        <li>• Cyber Law & Ethics</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 6</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Advanced Cryptography</li>
+                                        <li>• Mobile Security</li>
+                                        <li>• Cloud Security</li>
+                                        <li>• Research Methodology</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Year 4 -->
+                        <div>
+                            <h3 class="text-xl font-bold text-cyber-purple mb-4">Fourth Year</h3>
+                            <div class="space-y-3">
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 7</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• AI in Cybersecurity</li>
+                                        <li>• IoT Security</li>
+                                        <li>• Capstone Project I</li>
+                                        <li>• Industry Internship</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-cyber-gray/30 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-white">Semester 8</h4>
+                                    <ul class="text-cyber-gray-light text-sm mt-2 space-y-1">
+                                        <li>• Advanced Threat Detection</li>
+                                        <li>• Security Management</li>
+                                        <li>• Capstone Project II</li>
+                                        <li>• Professional Certification</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Download <span class="text-cyber-purple">Resources</span></h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="cyber-btn-primary">
+                            <i class="fas fa-download mr-2"></i>Complete Syllabus PDF
+                        </button>
+                        <button class="cyber-btn-outline">
+                            <i class="fas fa-file-alt mr-2"></i>Course Catalog
+                        </button>
+                        <button class="cyber-btn-outline">
+                            <i class="fas fa-calendar mr-2"></i>Academic Calendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-cyber-gray/50 border-t border-cyber-purple/30 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyber-purple to-cyber-purple-light rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">Cyber Department</span>
+                    </div>
+                    <p class="text-cyber-gray-light text-sm">Leading cybersecurity education and research for the digital age.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-cyber-gray-light text-sm">
+                        <li><button onclick="showSection('about')" class="hover:text-cyber-purple transition-colors">About Us</button></li>
+                        <li><button onclick="showSection('faculty')" class="hover:text-cyber-purple transition-colors">Faculty</button></li>
+                        <li><button onclick="showSection('students')" class="hover:text-cyber-purple transition-colors">Students</button></li>
+                        <li><button onclick="showSection('events')" class="hover:text-cyber-purple transition-colors">Events</button></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-white mb-4">Academics</h4>
+                    <ul class="space-y-2 text-cyber-gray-light text-sm">
+                        <li><button onclick="showSection('curriculum')" class="hover:text-cyber-purple transition-colors">Curriculum</button></li>
+                        <li><button onclick="showSection('infrastructure')" class="hover:text-cyber-purple transition-colors">Infrastructure</button></li>
+                        <li><button onclick="showSection('achievements')" class="hover:text-cyber-purple transition-colors">Achievements</button></li>
+                        <li><button onclick="showSection('gallery')" class="hover:text-cyber-purple transition-colors">Gallery</button></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-cyber-gray-light text-sm">
+                        <li><i class="fas fa-envelope mr-2 text-cyber-purple"></i>info@cyber.college.edu</li>
+                        <li><i class="fas fa-phone mr-2 text-cyber-purple"></i>+1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-cyber-purple"></i>123 University Avenue</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-cyber-purple/30 mt-8 pt-8 text-center">
+                <p class="text-cyber-gray-light text-sm">&copy; 2024 Cyber Security Department. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Custom Styles */
+        .cyber-btn-primary {
+            @apply bg-gradient-to-r from-cyber-purple to-cyber-purple-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-cyber-purple/25 border border-cyber-purple/30;
+        }
+        
+        .cyber-btn-secondary {
+            @apply bg-cyber-gray border border-cyber-purple text-cyber-purple px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-cyber-purple hover:text-white;
+        }
+        
+        .cyber-btn-outline {
+            @apply border border-cyber-purple text-cyber-purple px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-cyber-purple hover:text-white;
+        }
+        
+        .cyber-card {
+            @apply bg-cyber-gray/30 backdrop-blur-sm border border-cyber-purple/30 rounded-xl p-6 transition-all duration-300 hover:border-cyber-purple/50 hover:shadow-lg hover:shadow-cyber-purple/10;
+        }
+        
+        .cyber-badge {
+            @apply bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-xs font-medium border border-cyber-purple/30;
+        }
+        
+        .cyber-stat {
+            @apply transform transition-all duration-300 hover:scale-105;
+        }
+        
+        .nav-link.active {
+            @apply text-cyber-purple border-b-2 border-cyber-purple pb-1;
+        }
+        
+        .event-tab-btn.active {
+            @apply bg-cyber-purple text-white;
+        }
+        
+        .gallery-filter-btn {
+            @apply px-4 py-2 rounded-lg border border-cyber-purple/30 text-cyber-gray-light transition-all duration-300 hover:border-cyber-purple hover:text-cyber-purple;
+        }
+        
+        .gallery-filter-btn.active {
+            @apply bg-cyber-purple text-white border-cyber-purple;
+        }
+        
+        .gallery-item {
+            @apply transition-all duration-300 hover:scale-105;
+        }
+        
+        .section-content {
+            @apply transition-all duration-500 ease-in-out;
+        }
+        
+        /* Matrix Rain Effect */
+        .matrix-rain::before {
+            content: '01100001 01110000 01110000 01101100 01111001';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #00FF41;
+            opacity: 0.1;
+            white-space: pre;
+            overflow: hidden;
+            animation: matrix 20s linear infinite;
+            pointer-events: none;
+        }
+    </style>
+
+    <script>
+        (function() {
+            // Navigation and Section Management
+            function showSection(sectionId) {
+                // Hide all sections
+                const sections = document.querySelectorAll('.section-content');
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show selected section
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+                
+                // Update navigation active state
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to current link
+                const activeLink = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+                if (activeLink && activeLink.classList.contains('nav-link')) {
+                    activeLink.classList.add('active');
+                }
+                
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('hidden');
+            }
+            
+            // Event Tab Management
+            function showEventTab(tabName) {
+                // Hide all tab contents
+                const tabs = document.querySelectorAll('.event-tab-content');
+                tabs.forEach(tab => {
+                    tab.classList.add('hidden');
+                });
+                
+                // Show selected tab
+                document.getElementById(tabName + '-events').classList.remove('hidden');
+                
+                // Update tab buttons
+                const tabButtons = document.querySelectorAll('.event-tab-btn');
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                document.getElementById(tabName + '-tab').classList.add('active');
+            }
+            
+            // Gallery Management
+            function filterGallery(category) {
+                const items = document.querySelectorAll('.gallery-item');
+                const buttons = document.querySelectorAll('.gallery-filter-btn');
+                
+                // Update button states
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-filter="${category}"]`).classList.add('active');
+                
+                // Show/hide gallery items
+                items.forEach(item => {
+                    if (category === 'all' || item.classList.contains(category)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+            
+            // Lightbox Management
+            function openLightbox(imageSrc) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = imageSrc;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeLightbox() {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Students Data and Management
+            const studentsData = [
+                { name: "Alex Thompson", regNo: "CS2021001", mentor: "Dr. John Smith", research: "Network Security & Intrusion Detection" },
+                { name: "Maria Garcia", regNo: "CS2021002", mentor: "Dr. Sarah Johnson", research: "Digital Forensics & Incident Response" },
+                { name: "James Wilson", regNo: "CS2021003", mentor: "Prof. Michael Chen", research: "Cryptography & Blockchain Security" },
+                { name: "Emily Davis", regNo: "CS2021004", mentor: "Dr. Emma Wilson", research: "Ethical Hacking & Penetration Testing" },
+                { name: "David Rodriguez", regNo: "CS2021005", mentor: "Dr. John Smith", research: "Malware Analysis & Reverse Engineering" },
+                { name: "Sarah Lee", regNo: "CS2021006", mentor: "Dr. Sarah Johnson", research: "Cyber Threat Intelligence" },
+                { name: "Michael Brown", regNo: "CS2021007", mentor: "Prof. Michael Chen", research: "IoT Security & Privacy" },
+                { name: "Jessica Taylor", regNo: "CS2021008", mentor: "Dr. Emma Wilson", research: "Web Application Security" },
+                { name: "Christopher White", regNo: "CS2021009", mentor: "Dr. John Smith", research: "Cloud Security Architecture" },
+                { name: "Ashley Martinez", regNo: "CS2021010", mentor: "Dr. Sarah Johnson", research: "Mobile Security & App Analysis" },
+                { name: "Ryan Anderson", regNo: "CS2021011", mentor: "Prof. Michael Chen", research: "AI-Driven Threat Detection" },
+                { name: "Stephanie Clark", regNo: "CS2021012", mentor: "Dr. Emma Wilson", research: "Social Engineering & Human Factors" },
+                { name: "Brandon Lewis", regNo: "CS2021013", mentor: "Dr. John Smith", research: "Zero-Day Exploit Research" },
+                { name: "Amanda Walker<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Department - College of Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber': {
+                            'dark': '#0a0a0a',
+                            'darker': '#050505',
+                            'gray': '#1a1a1a',
+                            'light': '#2a2a2a',
+                            'purple': '#9333ea',
+                            'purple-light': '#a855f7',
+                            'cyan': '#06b6d4',
+                            'green': '#10b981'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'matrix': 'matrix 20s linear infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #9333ea, 0 0 10px #9333ea, 0 0 15px #9333ea' },
+                            '100%': { boxShadow: '0 0 10px #9333ea, 0 0 20px #9333ea, 0 0 30px #9333ea' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        matrix: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .matrix-character {
+            position: absolute;
+            color: #9333ea;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            animation: matrix 20s linear infinite;
+        }
+
+        .neon-border {
+            border: 1px solid #9333ea;
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+            border-color: #a855f7;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #9333ea, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #00ffff;
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
+            15%, 49% { transform: translate(-2px, 2px); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
+            21%, 62% { transform: translate(2px, -2px); }
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-white overflow-x-hidden">
+    <!-- Matrix Background Animation -->
+    <div class="matrix-bg" id="matrixBg"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-cyber-darker/95 backdrop-blur-md z-50 neon-border border-t-0 border-l-0 border-r-0">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-shield-alt text-2xl text-cyber-purple animate-pulse-slow"></i>
+                    <h1 class="text-xl font-mono font-bold gradient-text">CYBER_DEPT</h1>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">HOME</a>
+                    <a href="#about" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">ABOUT</a>
+                    <a href="#faculty" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">FACULTY</a>
+                    <a href="#students" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">STUDENTS</a>
+                    <a href="#events" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">EVENTS</a>
+                    <a href="#gallery" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">GALLERY</a>
+                    <a href="#contact" class="nav-link font-mono text-sm hover:text-cyber-purple transition-colors">CONTACT</a>
+                </div>
+
+                <button class="lg:hidden text-cyber-purple">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative cyber-grid">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-float">
+                <i class="fas fa-code text-6xl md:text-8xl text-cyber-purple mb-8 animate-glow"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-mono font-bold mb-6 glitch" data-text="CYBER DEPARTMENT">
+                CYBER DEPARTMENT
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Pioneering the future of cybersecurity education and research
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="px-8 py-3 bg-cyber-purple hover:bg-cyber-purple-light neon-border rounded-lg font-mono font-semibold transition-all transform hover:scale-105">
+                    EXPLORE PROGRAMS
+                </button>
+                <button class="px-8 py-3 border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-dark rounded-lg font-mono font-semibold transition-all transform hover:scale-105">
+                    VIEW RESEARCH
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <div class="neon-border rounded-lg p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                    <div class="text-3xl font-mono font-bold text-cyber-purple">150+</div>
+                    <div class="text-sm text-gray-300">Students</div>
+                </div>
+                <div class="neon-border rounded-lg p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                    <div class="text-3xl font-mono font-bold text-cyber-cyan">25+</div>
+                    <div class="text-sm text-gray-300">Faculty</div>
+                </div>
+                <div class="neon-border rounded-lg p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                    <div class="text-3xl font-mono font-bold text-cyber-green">12</div>
+                    <div class="text-sm text-gray-300">Labs</div>
+                </div>
+                <div class="neon-border rounded-lg p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                    <div class="text-3xl font-mono font-bold text-cyber-purple">5+</div>
+                    <div class="text-sm text-gray-300">Years</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cyber-gray/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                ABOUT_US
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Modern cybersecurity lab with multiple monitors showing security dashboards -->
+                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Cybersecurity Lab" 
+                         class="rounded-xl neon-border w-full h-auto">
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-mono font-semibold text-cyber-purple">MISSION.exe</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        To cultivate the next generation of cybersecurity professionals through cutting-edge education, 
+                        innovative research, and hands-on experience in defending digital infrastructures.
+                    </p>
+                    
+                    <h3 class="text-2xl font-mono font-semibold text-cyber-cyan">VISION.exe</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        To be a globally recognized center of excellence in cybersecurity education and research, 
+                        producing ethical hackers and security experts who protect our digital future.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <span class="px-4 py-2 bg-cyber-purple/20 text-cyber-purple border border-cyber-purple rounded-full text-sm font-mono">
+                            Ethical Hacking
+                        </span>
+                        <span class="px-4 py-2 bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan rounded-full text-sm font-mono">
+                            Network Security
+                        </span>
+                        <span class="px-4 py-2 bg-cyber-green/20 text-cyber-green border border-cyber-green rounded-full text-sm font-mono">
+                            Digital Forensics
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                FACULTY_MATRIX
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Faculty Card 1 -->
+                <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- Professional cybersecurity professor in modern lab setting -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                         alt="Dr. Alex Morgan" 
+                         class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-cyber-purple">
+                    <h3 class="text-xl font-mono font-semibold text-center text-cyber-purple mb-2">Dr. Alex Morgan</h3>
+                    <p class="text-center text-gray-300 mb-2">Head of Department</p>
+                    <p class="text-center text-sm text-gray-400 mb-4">PhD in Cybersecurity</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="mailto:alex.morgan@college.edu" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+1234567890" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Faculty Card 2 -->
+                <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- Female cybersecurity expert working on multiple screens -->
+                    <img src="https://pixabay.com/get/g6fe3c0e64c15f371512421bf968216a449aad781140ccb8ffa1b0800823d3e8fc2a5285827e36b9f167c274e5f6cfccab491bf74314e4470756bd3e0201fda76_1280.jpg" 
+                         alt="Prof. Sarah Chen" 
+                         class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-cyber-purple">
+                    <h3 class="text-xl font-mono font-semibold text-center text-cyber-purple mb-2">Prof. Sarah Chen</h3>
+                    <p class="text-center text-gray-300 mb-2">Network Security Specialist</p>
+                    <p class="text-center text-sm text-gray-400 mb-4">MSc in Information Security</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="mailto:sarah.chen@college.edu" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+1234567891" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Faculty Card 3 -->
+                <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- Senior cybersecurity researcher with multiple certifications -->
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                         alt="Dr. Marcus Williams" 
+                         class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-cyber-purple">
+                    <h3 class="text-xl font-mono font-semibold text-center text-cyber-purple mb-2">Dr. Marcus Williams</h3>
+                    <p class="text-center text-gray-300 mb-2">Ethical Hacking Expert</p>
+                    <p class="text-center text-sm text-gray-400 mb-4">PhD in Computer Science</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="mailto:marcus.williams@college.edu" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+1234567892" class="text-cyber-cyan hover:text-cyber-purple transition-colors">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Star Performers Section -->
+    <section id="star-performers" class="py-20 bg-cyber-gray/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                STAR_PERFORMERS
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neon-border rounded-xl p-6 bg-cyber-dark/50 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-trophy text-2xl text-cyber-purple mr-4"></i>
+                        <h3 class="text-xl font-mono font-semibold">National CTF Winner</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Emma Rodriguez secured 1st place in the National Cybersecurity Challenge 2024</p>
+                    <div class="text-sm text-cyber-cyan font-mono">Achievement: #001</div>
+                </div>
+
+                <div class="neon-border rounded-xl p-6 bg-cyber-dark/50 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-medal text-2xl text-cyber-green mr-4"></i>
+                        <h3 class="text-xl font-mono font-semibold">Research Excellence</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">James Park published groundbreaking research on AI-driven threat detection</p>
+                    <div class="text-sm text-cyber-cyan font-mono">Achievement: #002</div>
+                </div>
+
+                <div class="neon-border rounded-xl p-6 bg-cyber-dark/50 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-cyber-purple mr-4"></i>
+                        <h3 class="text-xl font-mono font-semibold">Bug Bounty Hunter</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Lisa Wong earned $50,000+ from ethical hacking and vulnerability research</p>
+                    <div class="text-sm text-cyber-cyan font-mono">Achievement: #003</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Section -->
+    <section id="students" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                STUDENT_DATABASE
+            </h2>
+            
+            <!-- Search and Filter -->
+            <div class="mb-8 flex flex-col md:flex-row gap-4 justify-between">
+                <div class="relative">
+                    <input type="text" placeholder="Search students..." 
+                           class="bg-cyber-gray border border-cyber-purple rounded-lg px-4 py-2 pl-10 text-white font-mono focus:outline-none focus:border-cyber-purple-light">
+                    <i class="fas fa-search absolute left-3 top-3 text-cyber-purple"></i>
+                </div>
+                <select class="bg-cyber-gray border border-cyber-purple rounded-lg px-4 py-2 text-white font-mono focus:outline-none">
+                    <option>All Research Areas</option>
+                    <option>Network Security</option>
+                    <option>Ethical Hacking</option>
+                    <option>Digital Forensics</option>
+                    <option>Cryptography</option>
+                </select>
+            </div>
+
+            <!-- Students Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full neon-border rounded-lg bg-cyber-gray/30 backdrop-blur-sm">
+                    <thead>
+                        <tr class="border-b border-cyber-purple">
+                            <th class="px-6 py-4 text-left font-mono text-cyber-purple">NAME</th>
+                            <th class="px-6 py-4 text-left font-mono text-cyber-purple">REG_NO</th>
+                            <th class="px-6 py-4 text-left font-mono text-cyber-purple">MENTOR</th>
+                            <th class="px-6 py-4 text-left font-mono text-cyber-purple">RESEARCH_INTEREST</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-cyber-gray">
+                        <tr class="hover:bg-cyber-purple/10 transition-colors" data-mock="true">
+                            <td class="px-6 py-4 font-mono">Alice Johnson</td>
+                            <td class="px-6 py-4 font-mono">CS2021001</td>
+                            <td class="px-6 py-4 font-mono">Dr. Alex Morgan</td>
+                            <td class="px-6 py-4 font-mono text-cyber-cyan">Network Security</td>
+                        </tr>
+                        <tr class="hover:bg-cyber-purple/10 transition-colors" data-mock="true">
+                            <td class="px-6 py-4 font-mono">Bob Smith</td>
+                            <td class="px-6 py-4 font-mono">CS2021002</td>
+                            <td class="px-6 py-4 font-mono">Prof. Sarah Chen</td>
+                            <td class="px-6 py-4 font-mono text-cyber-cyan">Ethical Hacking</td>
+                        </tr>
+                        <tr class="hover:bg-cyber-purple/10 transition-colors" data-mock="true">
+                            <td class="px-6 py-4 font-mono">Carol Davis</td>
+                            <td class="px-6 py-4 font-mono">CS2021003</td>
+                            <td class="px-6 py-4 font-mono">Dr. Marcus Williams</td>
+                            <td class="px-6 py-4 font-mono text-cyber-cyan">Digital Forensics</td>
+                        </tr>
+                        <!-- Additional rows would be populated dynamically -->
+                        <!-- @MAP: students.map(student => ( -->
+                        <tr class="hover:bg-cyber-purple/10 transition-colors" data-mock="true">
+                            <td class="px-6 py-4 font-mono" data-bind="student.name">Sample Name</td>
+                            <td class="px-6 py-4 font-mono" data-bind="student.regNo">CS2021XXX</td>
+                            <td class="px-6 py-4 font-mono" data-bind="student.mentor">Sample Mentor</td>
+                            <td class="px-6 py-4 font-mono text-cyber-cyan" data-bind="student.researchInterest">Sample Interest</td>
+                        </tr>
+                        <!-- @END_MAP )) -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-gray-400 font-mono">Showing 3 of 28 students • <span class="text-cyber-purple">Load More</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-cyber-gray/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                EVENTS_LOG
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- Cybersecurity conference with speakers and attendees -->
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Cybersecurity Conference" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-cyber-purple font-mono text-sm">UPCOMING</span>
+                            <span class="text-gray-400 font-mono text-sm">Dec 15, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-mono font-semibold mb-3">CyberSec Summit 2024</h3>
+                        <p class="text-gray-300 text-sm mb-4">Annual cybersecurity conference featuring industry experts and cutting-edge research presentations.</p>
+                        <button class="w-full py-2 bg-cyber-purple hover:bg-cyber-purple-light rounded-lg font-mono font-semibold transition-colors">
+                            REGISTER
+                        </button>
+                    </div>
+                </div>
+
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- Ethical hacking workshop with laptops and code -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Ethical Hacking Workshop" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-cyber-green font-mono text-sm">ONGOING</span>
+                            <span class="text-gray-400 font-mono text-sm">Nov 20, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-mono font-semibold mb-3">Ethical Hacking Bootcamp</h3>
+                        <p class="text-gray-300 text-sm mb-4">Intensive hands-on workshop covering penetration testing and vulnerability assessment techniques.</p>
+                        <button class="w-full py-2 bg-cyber-green hover:bg-green-500 rounded-lg font-mono font-semibold transition-colors">
+                            JOIN NOW
+                        </button>
+                    </div>
+                </div>
+
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <!-- CTF competition with teams working on computers -->
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="CTF Competition" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-400 font-mono text-sm">COMPLETED</span>
+                            <span class="text-gray-400 font-mono text-sm">Oct 10, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-mono font-semibold mb-3">Annual CTF Challenge</h3>
+                        <p class="text-gray-300 text-sm mb-4">48-hour capture the flag competition testing skills in cryptography, web security, and reverse engineering.</p>
+                        <button class="w-full py-2 bg-cyber-gray border border-gray-500 rounded-lg font-mono font-semibold transition-colors">
+                            VIEW RESULTS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure Section -->
+    <section id="infrastructure" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                INFRASTRUCTURE_SYS
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-laptop-code text-2xl text-cyber-purple mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Advanced Computing Labs</h3>
+                        </div>
+                        <p class="text-gray-300">12 state-of-the-art labs equipped with high-performance workstations for security research and analysis.</p>
+                    </div>
+
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-network-wired text-2xl text-cyber-cyan mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Network Security Lab</h3>
+                        </div>
+                        <p class="text-gray-300">Dedicated environment for testing network protocols, firewalls, and intrusion detection systems.</p>
+                    </div>
+
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-server text-2xl text-cyber-green mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Digital Forensics Suite</h3>
+                        </div>
+                        <p class="text-gray-300">Specialized tools and hardware for digital evidence recovery and cybercrime investigation.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Modern computer lab with multiple workstations -->
+                    <img src="https://pixabay.com/get/g31ae729c53612b20f2d8bb4c92ef8d2dd7243b5d4d8640ff3d9165f3768c9efc87772d9b804f02268cba62137c71ce1c6c3f5bad8f74e05b2fc715f3f2821d60_1280.jpg" 
+                         alt="Computer Lab" 
+                         class="rounded-xl neon-border w-full h-auto">
+                    <!-- Network server room with organized cables -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Server Room" 
+                         class="rounded-xl neon-border w-full h-auto">
+                    <!-- Cybersecurity monitoring center with multiple screens -->
+                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Security Operations Center" 
+                         class="rounded-xl neon-border w-full h-auto">
+                    <!-- Digital forensics workstation with analysis tools -->
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Forensics Lab" 
+                         class="rounded-xl neon-border w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-cyber-gray/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                GALLERY_ARCHIVE
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Students working in cybersecurity lab -->
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Students in Lab" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Cybersecurity team competition -->
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Team Competition" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Faculty presentation on cybersecurity -->
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Faculty Presentation" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Advanced networking equipment -->
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Network Equipment" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Students collaborating on cybersecurity project -->
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Student Collaboration" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Cybersecurity conference attendees -->
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Conference Attendees" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Modern computer lab setup -->
+                <img src="https://pixabay.com/get/g455dcaa9404df88f508f8f6508ebf1925155a7e2d3e8de4410e3eee0401047565cf024593cd834c35f1e7643c6a75c241ce3a1aaab34e53cd7e5906826d2903c_1280.jpg" 
+                     alt="Lab Setup" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+                <!-- Cybersecurity research workspace -->
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                     alt="Research Workspace" 
+                     class="rounded-lg neon-border w-full h-auto hover:scale-105 transition-transform cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                CURRICULUM_DATA
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-mono font-semibold text-cyber-purple">Core Modules</h3>
+                    <div class="space-y-4">
+                        <div class="neon-border rounded-lg p-4 bg-cyber-gray/30 backdrop-blur-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono">Network Security Fundamentals</span>
+                                <span class="text-cyber-cyan text-sm">Year 1</span>
+                            </div>
+                        </div>
+                        <div class="neon-border rounded-lg p-4 bg-cyber-gray/30 backdrop-blur-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono">Ethical Hacking & Penetration Testing</span>
+                                <span class="text-cyber-cyan text-sm">Year 2</span>
+                            </div>
+                        </div>
+                        <div class="neon-border rounded-lg p-4 bg-cyber-gray/30 backdrop-blur-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono">Digital Forensics & Investigation</span>
+                                <span class="text-cyber-cyan text-sm">Year 3</span>
+                            </div>
+                        </div>
+                        <div class="neon-border rounded-lg p-4 bg-cyber-gray/30 backdrop-blur-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono">Advanced Cryptography</span>
+                                <span class="text-cyber-cyan text-sm">Year 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-mono font-semibold text-cyber-purple">Download Resources</h3>
+                    <div class="space-y-4">
+                        <button class="w-full p-4 neon-border rounded-lg bg-cyber-gray/30 backdrop-blur-sm hover:bg-cyber-purple/20 transition-colors flex items-center justify-between" data-implementation="Should trigger PDF download">
+                            <span class="font-mono">Complete Syllabus PDF</span>
+                            <i class="fas fa-download text-cyber-purple"></i>
+                        </button>
+                        <button class="w-full p-4 neon-border rounded-lg bg-cyber-gray/30 backdrop-blur-sm hover:bg-cyber-purple/20 transition-colors flex items-center justify-between" data-implementation="Should trigger PDF download">
+                            <span class="font-mono">Course Structure Guide</span>
+                            <i class="fas fa-download text-cyber-purple"></i>
+                        </button>
+                        <button class="w-full p-4 neon-border rounded-lg bg-cyber-gray/30 backdrop-blur-sm hover:bg-cyber-purple/20 transition-colors flex items-center justify-between" data-implementation="Should trigger PDF download">
+                            <span class="font-mono">Lab Manual Collection</span>
+                            <i class="fas fa-download text-cyber-purple"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 p-6 neon-border rounded-xl bg-cyber-dark/50 backdrop-blur-sm">
+                        <h4 class="text-lg font-mono font-semibold text-cyber-cyan mb-3">Program Highlights</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check text-cyber-green mr-3"></i> Industry-certified instructors</li>
+                            <li class="flex items-center"><i class="fas fa-check text-cyber-green mr-3"></i> Hands-on lab experience</li>
+                            <li class="flex items-center"><i class="fas fa-check text-cyber-green mr-3"></i> Industry partnerships</li>
+                            <li class="flex items-center"><i class="fas fa-check text-cyber-green mr-3"></i> Research opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Visits Section -->
+    <section id="industrial-visits" class="py-20 bg-cyber-gray/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                INDUSTRIAL_VISITS
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm">
+                    <!-- Students visiting a modern tech company office -->
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Tech Company Visit" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-mono font-semibold mb-3 text-cyber-purple">CyberTech Industries</h3>
+                        <p class="text-gray-300 text-sm mb-4">Students explored cutting-edge security operations center and learned about real-world threat detection systems.</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-cyber-cyan font-mono">March 2024</span>
+                            <span class="text-gray-400">45 Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm">
+                    <!-- Students in a corporate cybersecurity training room -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Corporate Training" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-mono font-semibold mb-3 text-cyber-purple">SecureNet Solutions</h3>
+                        <p class="text-gray-300 text-sm mb-4">Hands-on workshop on penetration testing methodologies and vulnerability assessment techniques.</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-cyber-cyan font-mono">January 2024</span>
+                            <span class="text-gray-400">32 Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-border rounded-xl overflow-hidden bg-cyber-dark/50 backdrop-blur-sm">
+                    <!-- Students touring a data center facility -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Data Center Tour" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-mono font-semibold mb-3 text-cyber-purple">CloudSecure Data Center</h3>
+                        <p class="text-gray-300 text-sm mb-4">Comprehensive tour of enterprise data center infrastructure and security protocols.</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-cyber-cyan font-mono">November 2023</span>
+                            <span class="text-gray-400">28 Students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-mono font-bold text-center mb-16 gradient-text">
+                CONTACT_INTERFACE
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-cyber-purple mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Location</h3>
+                        </div>
+                        <p class="text-gray-300">
+                            Cyber Department<br>
+                            College of Technology<br>
+                            Tech Campus, Building B<br>
+                            Innovation City, TC 12345
+                        </p>
+                    </div>
+
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-2xl text-cyber-cyan mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Email</h3>
+                        </div>
+                        <p class="text-gray-300">
+                            <a href="mailto:cyber.dept@college.edu" class="text-cyber-cyan hover:text-cyber-purple transition-colors">cyber.dept@college.edu</a><br>
+                            <a href="mailto:admissions@college.edu" class="text-cyber-cyan hover:text-cyber-purple transition-colors">admissions@college.edu</a>
+                        </p>
+                    </div>
+
+                    <div class="neon-border rounded-xl p-6 bg-cyber-gray/30 backdrop-blur-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-phone text-2xl text-cyber-green mr-4"></i>
+                            <h3 class="text-xl font-mono font-semibold">Phone</h3>
+                        </div>
+                        <p class="text-gray-300">
+                            Main Office: <a href="tel:+1234567890" class="text-cyber-green hover:text-cyber-purple transition-colors">+1 (234) 567-8900</a><br>
+                            Admissions: <a href="tel:+1234567891" class="text-cyber-green hover:text-cyber-purple transition-colors">+1 (234) 567-8901</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="neon-border rounded-xl p-8 bg-cyber-gray/30 backdrop-blur-sm">
+                    <h3 class="text-2xl font-mono font-semibold mb-6 text-cyber-purple">Send Message</h3>
+                    <form class="space-y-6" data-implementation="Should handle form submission with validation">
+                        <div>
+                            <label class="block text-sm font-mono text-gray-300 mb-2">Name *</label>
+                            <input type="text" required 
+                                   class="w-full px-4 py-3 bg-cyber-dark border border-cyber-purple rounded-lg text-white font-mono focus:outline-none focus:border-cyber-purple-light transition-colors"
+                                   placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-mono text-gray-300 mb-2">Email *</label>
+                            <input type="email" required 
+                                   class="w-full px-4 py-3 bg-cyber-dark border border-cyber-purple rounded-lg text-white font-mono focus:outline-none focus:border-cyber-purple-light transition-colors"
+                                   placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-mono text-gray-300 mb-2">Subject</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 bg-cyber-dark border border-cyber-purple rounded-lg text-white font-mono focus:outline-none focus:border-cyber-purple-light transition-colors"
+                                   placeholder="Message subject">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-mono text-gray-300 mb-2">Message *</label>
+                            <textarea required rows="5" 
+                                      class="w-full px-4 py-3 bg-cyber-dark border border-cyber-purple rounded-lg text-white font-mono focus:outline-none focus:border-cyber-purple-light transition-colors resize-none"
+                                      placeholder="Your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full py-3 bg-cyber-purple hover:bg-cyber-purple-light neon-border rounded-lg font-mono font-semibold transition-all transform hover:scale-105"
+                                data-event="click:handleFormSubmit">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-cyber-darker border-t border-cyber-purple">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-cyber-purple"></i>
+                        <h3 class="text-xl font-mono font-bold gradient-text">CYBER_DEPT</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Pioneering cybersecurity education and research for the digital future.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-mono font-semibold text-cyber-purple mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="text-gray-400 hover:text-cyber-purple transition-colors">About Us</a></li>
+                        <li><a href="#faculty" class="text-gray-400 hover:text-cyber-purple transition-colors">Faculty</a></li>
+                        <li><a href="#curriculum" class="text-gray-400 hover:text-cyber-purple transition-colors">Curriculum</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-cyber-purple transition-colors">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-mono font-semibold text-cyber-purple mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#infrastructure" class="text-gray-400 hover:text-cyber-purple transition-colors">Labs</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-cyber-purple transition-colors">Gallery</a></li>
+                        <li><a href="#students" class="text-gray-400 hover:text-cyber-purple transition-colors">Students</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyber-purple transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-mono font-semibold text-cyber-purple mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-cyber-gray mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm font-mono">
+                    © 2024 Cyber Department, College of Technology. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Matrix rain effect
+            function createMatrixRain() {
+                const matrixBg = document.getElementById('matrixBg');
+                const characters = '01アカサタナハマヤラワ';
+                
+                for (let i = 0; i < 50; i++) {
+                    const char = document.createElement('div');
+                    char.className = 'matrix-character';
+                    char.textContent = characters[Math.floor(Math.random() * characters.length)];
+                    char.style.left = Math.random() * 100 + '%';
+                    char.style.animationDelay = Math.random() * 20 + 's';
+                    char.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                    matrixBg.appendChild(char);
+                }
+            }
+
+            // Smooth scrolling for navigation links
+            function initSmoothScrolling() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                createMatrixRain();
+                initSmoothScrolling();
+                
+                // TODO: Initialize dynamic content loading for events, students, and achievements
+                // TODO: Implement form validation and submission handling
+                // TODO: Add image gallery lightbox functionality
+                // TODO: Implement search and filter for student table
+            });
+
+            // Add interactive hover effects
+            document.addEventListener('mouseover', function(e) {
+                if (e.target.classList.contains('neon-border')) {
+                    e.target.style.transform = 'translateY(-2px)';
+                }
+            });
+
+            document.addEventListener('mouseout', function(e) {
+                if (e.target.classList.contains('neon-border')) {
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
